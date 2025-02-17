@@ -1,0 +1,128 @@
+<section class="page">
+<section class="container">
+    <section class="left">
+        <section class="login">Login</section>
+        <section class="eula">By logging in you agree to the ridiculously long terms that you didnt bother to read
+        </section>
+        <a href="#" class="redirekt">loggin later?</a>
+    </section>
+        <form action="/loggin/check" class="form">
+            <label for="username">Username</label>
+            <input type="Username" id="USername">
+            <label for="password">Password</label>
+            <input type="password" id="password">
+            <input type="submit" id="submit" value="Submit">
+            <%=@error_message%>
+            <input type="submit" id="Create_account" value="Create account">
+        </form>
+    </section>
+</section>
+</section>
+
+
+
+
+
+
+
+<style> 
+body {
+    background: url('img/steamloga.webp') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+      }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: white;
+            max-width: 320px;
+            width: 100%;
+        }
+
+        .login {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .eula {
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .redirekt {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .redirekt:hover {
+            color: #ff3b3b;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        label {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #444;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #ff6b6b;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        #submit {
+            background: linear-gradient(45deg, #ff6b6b, #ff3b3b);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        #submit:hover {
+            background: linear-gradient(45deg, #ff3b3b, #c60000);
+        }
+    </style>
+
+<script>
+    // Liten interaktiv effekt för inputfält
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("focus", () => {
+            input.style.borderColor = "#ff6b6b";
+        });
+        input.addEventListener("blur", () => {
+            input.style.borderColor = "#444";
+        });
+    });
+</script>

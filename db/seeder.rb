@@ -28,7 +28,8 @@ class Seeder
   end
 
   def self.populate_tables
-    db.execute('INSERT INTO users (username, password, cuntry, city, admin ) VALUES ("Flusek", 296, "Jag heter elias.", "Sweden", "Gothenburg", True)')
+    password_hashed2 = BCrypt::Password.create("296")
+    db.execute('INSERT INTO users (username, password, description, cuntry, city, admin ) VALUES ("Flusek", password_hashed2 , "Jag heter elias.", "Sweden", "Gothenburg", True)')
 
   end
 
